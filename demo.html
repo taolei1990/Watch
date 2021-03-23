@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>太空人表盘</title>
+    <meta charset="UTF-8">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="./assets/css/font_2437911_1lpzs5lk858/iconfont.css" rel="stylesheet">
+    <script src="./assets/js/timeGeneration.js"></script>
+
+</head>
+<body>
+<div class="jun-meter">
+    <div class="jun-meter-box"></div>
+    <div class="jun-top">
+        <div class="jun-rocket">
+          <div class="jun-rocket-rode"><i class="iconfont">&#xe615;</i></div>
+        <div id="jun0"  class="jun-bfb">80%</div>
+        </div>
+    <div class="jun-weather">
+        <div id="jun1" class="jun-kqzl">空气优质</div>
+        <div class="jun-weather-box">
+        <div class="jun-kqzl-xq">
+            <div class="jun-sxad-item"><span id="jun2">空气晴</span><span id="jun4" style="margin-left: 10px">26°</span><span style="font-size: 24px;margin-left: 10px">△</span></div>
+            <div class="jun-sxad-item"><span id="jun3">26°C</span><span id="jun5" style="margin-left: 10px">26°</span><span style="font-size: 24px;margin-left: 10px">▽</span></div>
+        </div>
+        <div class="jun-kqzl-tq"><i class="iconfont">&#xe694</i></div>
+        </div>
+    </div>
+    </div>
+    <div class="jun-center">
+        <div class="jun-dcegf-casc">
+            <div class="jun-xingtoao">
+                <div ><span id="jun6">80</span>-<span id="jun7">421</span></div>
+                <i class="iconfont">&#xe681;</i>
+                <span id="jun8">120</span>
+            </div>
+            <div class="jun-busu"><i class="iconfont">&#xe608;</i><span id="jun9">4572</span></div>
+        </div>
+        </div>
+    <div class="jun-bottom">
+        <div class="jun-bottom-item"><div class="jun-bottom-a">睡眠</div><div id="jun10" class="jun-bottom-b jun-bottom-d">7H52M</div><div class="jun-bottom-c">距离</div></div>
+        <div class="jun-bottom-item"><div class="jun-bottom-a"></div><div id="jun11" class="jun-bottom-b jun-bottom-e">8.65KM</div><div class="jun-bottom-c"></div></div>
+    </div>
+    <div class="jun-time-h-h" id="hh"></div>
+    <div class="jun-time-h-l" id="hl"></div>
+    <div class="jun-time-rect"></div>
+    <div class="jun-human"></div>
+    <div class="jun-time-m-h" id="mh"></div>
+    <div class="jun-time-m-l" id="ml"></div>
+    <div class="jun-time-s-h" id="sh"></div>
+    <div class="jun-time-s-l" id="sl"></div>
+    <div class="jun-date" id="date"></div>
+    <div class="jun-calendar-date" id="calendarDate"></div>
+</div>
+<script>
+  function WatchMeter() {
+        // 初始化dom
+        this._initDom()
+        // 更新
+        this.update()
+        this.date = new TimeGeneration()
+
+    }
+    // 修改原型
+    WatchMeter.prototype = {
+        constructor: WatchMeter,
+        // 初始化Dom
+        _initDom: function () {
+            this.elem = {}
+            this.elem.hh = document.getElementById('hh')
+            this.elem.hl = document.getElementById('hl')
+            this.elem.mh = document.getElementById('mh')
+            this.elem.ml = document.getElementById('ml')
+            this.elem.sh = document.getElementById('sh')
+            this.elem.sl = document.getElementById('sl')
+            this.elem.date = document.getElementById('date')
+            this.elem.calendarDate = document.getElementById('calendarDate')
+        },
+
+        // 更新
+        update: function () {
+            var _this = this
+            setInterval(function () {
+                _this._render(_this.date.getDate(), _this.date.getCalendarDate(), _this.date.getTime())
+            }, 1000)
+        },
+        // 渲染
+        _render: function (date, calendarDate, time) {
+            this._setNumberImage(this.elem.hh, time[0])
+            this._setNumberImage(this.elem.hl, time[1])
+            this._setNumberImage(this.elem.mh, time[2])
+            this._setNumberImage(this.elem.ml, time[3])
+            this._setNumberImage(this.elem.sh, time[4])
+            this._setNumberImage(this.elem.sl, time[5])
+            this.elem.date.innerText = date[2] + " " +date[0] + "-" +date[1]
+            this.elem.calendarDate.innerText = calendarDate
+        },
+        // 设置数字图片
+        _setNumberImage: function (elem, value) {
+            elem.style.backgroundImage = "url(./assets/img/" + value + ".svg)";
+        }
+    }
+    var myWatchMeter = new WatchMeter()
+</script>
+<script src="assets/js/jquery.min.js" ></script>
+<script >
+$(document).ready(function () {
+  const parameters = {
+    key:'9b004f76f381b5df8f869bc1c46c21b8',
+    city:'',
+    extensions:'base'
+    // extensions:'all'
+  }
+  $.ajax({
+    type : "GET", //提交方式
+    url : "https://restapi.amap.com/v3/ip",//路径
+    data : parameters,//数据，这里使用的是Json格式进行传输
+    success : function(result) {//返回数据根据结果进行相应的处理
+      console.log('成功1', result)
+      parameters.city = result.adcode
+
+      getWeather()
+    }
+  })
+  function getWeather() {
+    $.ajax({
+      type : "GET", //提交方式
+      url : "https://restapi.amap.com/v3/weather/weatherInfo",//路径
+      data : parameters,//数据，这里使用的是Json格式进行传输
+      success : function(result) {//返回数据根据结果进行相应的处理
+        console.log('成功2', result)
+        $('#jun0').text(result.lives[0].humidity+'%')
+        $('#jun1').text(result.lives[0].province)
+        $('#jun2').text(result.lives[0].weather)
+        $('#jun3').text(result.lives[0].temperature + '°C' )
+        $('#jun4').text((result.lives[0].temperature) - -2)
+        $('#jun5').text(result.lives[0].temperature - 2)
+      }
+    })
+  }
+  $('#jun6').text(GetRandomNum(10,100))
+  $('#jun7').text(GetRandomNum(200,500))
+  $('#jun8').text(GetRandomNum(10,500))
+  $('#jun9').text(GetRandomNum(0,9999))
+  $('#jun10').text(GetRandomNum(0,23)+'H'+GetRandomNum(1,59)+'M')
+  $('#jun11').text(GetRandomNum(0,9999)+'KM')
+  function GetRandomNum(Min,Max) {
+    var Range = Max - Min;
+    var Rand = Math.random();
+    return(Min + Math.round(Rand * Range));
+  }
+})
+</script>
+</body>
+</html>

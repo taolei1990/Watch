@@ -1,0 +1,65 @@
+{
+  "id": "2437911",
+  "name": "华为太空手表",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "666890",
+      "name": "天气",
+      "font_class": "tianqi",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "685504",
+      "name": "晴",
+      "font_class": "qing",
+      "unicode": "e6f5",
+      "unicode_decimal": 59125
+    },
+    {
+      "icon_id": "685507",
+      "name": "小雨",
+      "font_class": "xiaoyu",
+      "unicode": "e6f7",
+      "unicode_decimal": 59127
+    },
+    {
+      "icon_id": "715906",
+      "name": "火箭",
+      "font_class": "huojian",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "7095463",
+      "name": "服饰-运动鞋",
+      "font_class": "fushi-yundongxie",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "7366876",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "17187317",
+      "name": "健康安全",
+      "font_class": "jiankanganquan",
+      "unicode": "e681",
+      "unicode_decimal": 59009
+    },
+    {
+      "icon_id": "18170570",
+      "name": "火箭,快速,技术,升级",
+      "font_class": "rocket-full",
+      "unicode": "e9d7",
+      "unicode_decimal": 59863
+    }
+  ]
+}

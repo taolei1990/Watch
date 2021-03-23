@@ -1,0 +1,248 @@
+.jun-meter {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    padding: 24px;
+    background-color: #333333;
+    background-size: 100%;
+    margin: auto;
+    top: 50%;
+    margin-top: -274px;
+    overflow: hidden;
+    border-radius: 55%;
+}
+.jun-meter-box{
+    position: absolute;
+    background-color: #e0e6ef;
+    overflow: hidden;
+    border-radius: 55%;
+    top: 24px;
+    left: 24px;
+    bottom: 24px;
+    right: 24px;
+}
+.jun-top{
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    border-bottom: 4px solid #333333;
+    height: 134px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.jun-bfb{
+    font-size: 34px;
+    font-weight: 600;
+}
+.jun-rocket{
+    width: calc(41.65% - 20px) ;
+    border-right: 4px solid #333;
+    text-align: right;
+    padding-right: 20px;
+}
+.jun-rocket-rode{
+    position: relative;
+    top: 68px;
+    right: -36px;
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+}
+.jun-rocket-rode i{
+    font-size: 60px;
+
+}
+.jun-weather{
+    flex-grow: 2;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    font-size: 19px;
+}
+.jun-sxad-item{
+
+}
+.jun-weather-box{
+    display: flex;
+    align-items: center;
+}
+.jun-kqzl-tq i{
+    font-size: 50px;
+}
+
+.jun-kqzl-tq{
+    padding-left: 20px;
+
+}
+.jun-center{
+    position: absolute;
+    top: 166px;
+    left: 24px;
+    right: 24px;
+    bottom: 140px;
+}
+.jun-busu i{
+    font-size: 42px;
+}
+.jun-busu span{
+    font-size: 26px;
+    margin-left: 10px;
+}
+.jun-xingtoao{
+    font-size: 22px;
+}
+.jun-xingtoao i{
+    font-size: 42px;
+}
+
+.jun-xingtoao span{
+     font-size: 26px;
+ }
+.jun-bottom{
+    border-top: 4px solid #333;
+    position: absolute;
+    height: 109px;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+}
+.jun-bottom-item{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+
+}
+.jun-bottom-item div{
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+}
+.jun-bottom-a{  padding-right: 20px}
+.jun-bottom-c{ padding-left: 20px}
+.jun-bottom-b{
+    width: 30%;
+    height: 100%;
+
+    justify-content: center;
+}
+.jun-bottom-d{
+    border-bottom: 4px solid #333;
+    border-right: 4px solid #333;
+}
+.jun-bottom-e{
+    border-left: 4px solid #333;
+}
+.jun-dcegf-casc{
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: flex-end;
+}
+.jun-time-rect {
+    position: absolute;
+    width: 30px;
+    height: 80px;
+    left: 255px;
+    top: 160px;
+    background-image: url("../img/rect.svg");
+    background-size: 40px 40px;
+}
+
+.jun-time-h-h {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 120px;
+    top: 150px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-time-h-l {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 180px;
+    top: 150px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-time-m-h {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 270px;
+    top: 150px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-time-m-l {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 330px;
+    top: 150px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-time-s-h {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 410px;
+    top: 188px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-time-s-l {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 450px;
+    top: 188px;
+    background-image: url("../img/8.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.jun-calendar-date {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    right: 30px;
+    top: 280px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.jun-date {
+    position: absolute;
+    width: 120px;
+    height: 30px;
+    right: 30px;
+    top: 310px;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.jun-human{
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    left: 200px;
+    top: 268px;
+    background-image: url("../img/human.gif");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
